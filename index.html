@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Exprexa – Your Deliveries, Our Priority</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+ <div class="wrap nav">
+  <a href="#home" class="logo">Black<b>Exprexa</b></a>
+  <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <nav class="links" id="menu">
+   <a class="lk" href="#home">Home</a>
+   <a class="lk" href="#about">About Us</a>
+   <a class="lk" href="#services">Services</a>
+   <a class="lk" href="#pricing">Pricing</a>
+   <a class="lk" href="#track">Track Package</a>
+   <a class="lk" href="#contact">Contact</a>
+   <button class="btn l sm" onclick="openAuth('login')">Login</button>
+   <button class="btn sm" onclick="openAuth('signup')">Sign Up</button>
+   <div class="menu-apps">
+    <a class="store" href="#home" onclick="getApp('App Store')"><small>Download on the</small>App Store</a>
+    <a class="store" href="#home" onclick="getApp('Google Play')"><small>Get it on</small>Google Play</a>
+   </div>
+  </nav>
+ </div>
+</header>
+
+<main>
+
+<div class="view" id="page-home">
+ <div class="hero"><div class="wrap">
+  <div>
+   <h1>Your Deliveries, <span>Our Priority.</span></h1>
+   <p>Black Exprexa moves parcels across Nigeria by motorcycle riders you can trust. Fast, reliable and fully tracked, for individuals, vendors and companies.</p>
+   <p><a class="btn" href="#book">Book a Delivery</a> <a class="btn l" style="color:#fff;border-color:#fff6" href="#track">Track Your Package</a></p>
+  </div>
+ </div></div>
+
+ <section class="s alt" id="about"><div class="wrap">
+  <h2>About Black Exprexa</h2>
+  <p style="max-width:700px">We are a Lagos-based logistics company. Our riders deliver documents, food, gadgets and bulk orders with care, speed and clear pricing.</p>
+  <img class="about-img" src="images/about.jpg" alt="Black Exprexa delivery riders" onerror="this.style.display='none'">
+  <div class="grid">
+   <div class="card stat"><b>250,000+</b>Deliveries completed</div>
+   <div class="card stat"><b>1,800+</b>Active riders</div>
+   <div class="card stat"><b>98%</b>Satisfied customers</div>
+  </div>
+ </div></section>
+
+ <section class="s"><div class="wrap">
+  <h2>How It Works</h2>
+  <div class="grid">
+   <div class="card"><h3>1. Book</h3><p>Enter pickup, destination and package details.</p></div>
+   <div class="card"><h3>2. Rider assigned</h3><p>A nearby rider collects your parcel.</p></div>
+   <div class="card"><h3>3. Track</h3><p>Follow every status update.</p></div>
+   <div class="card"><h3>4. Delivered</h3><p>Your receiver gets it safely.</p></div>
+  </div>
+ </div></section>
+
+ <section class="s alt"><div class="wrap">
+  <h2>Why Choose Us</h2>
+  <div class="grid">
+   <div class="card"><h3>Fast</h3><p>Express options for urgent parcels.</p></div>
+   <div class="card"><h3>Reliable</h3><p>Vetted and trained riders.</p></div>
+   <div class="card"><h3>Transparent</h3><p>Know the price before you book.</p></div>
+   <div class="card"><h3>Trustworthy</h3><p>A dedicated support team.</p></div>
+  </div>
+ </div></section>
+
+ <section class="s"><div class="wrap">
+  <h2>What Customers Say</h2>
+  <div class="grid">
+   <div class="card"><p>“My shop's orders now reach buyers the same day.”</p><b>Amaka O., Online vendor</b></div>
+   <div class="card"><p>“Express saved an important contract delivery.”</p><b>Tunde A., Lawyer</b></div>
+   <div class="card"><p>“Tracking is clear and the riders are polite.”</p><b>Fatima B., Student</b></div>
+  </div>
+ </div></section>
+
+ <section class="s alt"><div class="wrap grid">
+  <div class="card"><img class="business-img" src="images/business.jpg" alt="Business delivery" onerror="this.style.display='none'"><h3>Partner with us</h3><p>Vendors and companies get dedicated plans and bulk handling.</p><a class="btn" href="#business">Business Solutions</a></div>
+  <div class="card"><img class="card-img" src="images/rider.jpg" alt="Delivery rider" onerror="this.style.display='none'"><h3>Become a Rider</h3><p>Earn on your own schedule with weekly payouts.</p><a class="btn d" href="#rider">Join as Rider</a></div>
+ </div></section>
+
+ <section class="s"><div class="wrap">
+  <h2>Frequently Asked Questions</h2>
+  <details><summary>How fast is Express delivery?</summary><p>Usually within 1–2 hours inside a city.</p></details>
+  <details><summary>How do I pay?</summary><p>You can pay by card or bank transfer.</p></details>
+  <details><summary>Can I schedule a pickup?</summary><p>Yes, choose a date and time when booking.</p></details>
+  <details><summary>How do I track my parcel?</summary><p>Use your tracking number on the Track Package page.</p></details>
+  <details><summary>Do you deliver between cities?</summary><p>Yes, Intercity Delivery covers supported cities.</p></details>
+ </div></section>
+</div>
+
+<div class="view" id="page-services"><div class="wrap pg">
+ <h2>Our Services</h2>
+ <input id="service-search" placeholder="Search services…" oninput="filterServices()" style="max-width:340px;margin-bottom:16px">
+ <div class="grid">
+  <div class="card service"><h3>Express Delivery</h3><p>Fast delivery for urgent packages.</p><button class="btn sm" onclick="bookType('express')">Book now</button></div>
+  <div class="card service"><h3>Same-Day Delivery</h3><p>Packages delivered within the same day.</p><button class="btn sm" onclick="bookType('sameday')">Book now</button></div>
+  <div class="card service"><h3>Standard Delivery</h3><p>Affordable delivery for regular packages.</p><button class="btn sm" onclick="bookType('standard')">Book now</button></div>
+  <div class="card service"><h3>Business Delivery</h3><p>Delivery solutions for businesses.</p><button class="btn sm" onclick="bookType('business')">Book now</button></div>
+  <div class="card service"><h3>Bulk Delivery</h3><p>Handling multiple packages and orders.</p><button class="btn sm" onclick="bookType('bulk')">Book now</button></div>
+  <div class="card service"><h3>Scheduled Delivery</h3><p>Choose your preferred delivery date.</p><button class="btn sm" onclick="bookType('scheduled')">Book now</button></div>
+  <div class="card service"><h3>Intercity Delivery</h3><p>Delivery between supported cities.</p><button class="btn sm" onclick="bookType('intercity')">Book now</button></div>
+ </div>
+ <p id="no-services" style="display:none">No matching services.</p>
+</div></div>
+
+<div class="view" id="page-book"><div class="wrap pg">
+ <h2>Book a Delivery</h2>
+ <form id="book-form" class="card" novalidate>
+  <div class="row">
+   <label>Pickup location<input name="pickup"><span class="err"></span></label>
+   <label>Delivery destination<input name="destination"><span class="err"></span></label>
+  </div>
+  <div class="row">
+   <label>Sender name<input name="senderName"><span class="err"></span></label>
+   <label>Sender phone<input name="senderPhone" placeholder="0801 234 5678"><span class="err"></span></label>
+   <label>Receiver name<input name="receiverName"><span class="err"></span></label>
+   <label>Receiver phone<input name="receiverPhone" placeholder="0802 345 6789"><span class="err"></span></label>
+  </div>
+  <div class="row">
+   <label>Package category
+    <select name="category"><option value="">Select…</option><option>Documents</option><option>Food</option><option>Electronics</option><option>Clothing</option><option>Other</option></select>
+    <span class="err"></span></label>
+   <label>Delivery type
+    <select name="type">
+     <option value="express">Express</option><option value="sameday">Same-Day</option><option value="standard">Standard</option>
+     <option value="business">Business</option><option value="bulk">Bulk</option><option value="scheduled">Scheduled</option><option value="intercity">Intercity</option>
+    </select></label>
+  </div>
+  <div class="row">
+   <label>Pickup date<input name="date" type="date"><span class="err"></span></label>
+   <label>Pickup time<input name="time" type="time"><span class="err"></span></label>
+  </div>
+  <label>Describe the package<textarea name="description" rows="3"></textarea><span class="err"></span></label>
+  <div class="price">Starting price: <b id="book-price">₦0</b></div>
+  <button class="btn" type="submit">Review Order</button>
+ </form>
+
+ <div id="review" class="card" style="display:none;margin-top:18px">
+  <h3>Review your order</h3>
+  <p> <span id="r-route"></span><br>
+      <span id="r-people"></span><br>
+      <span id="r-package"></span><br>
+      <span id="r-when"></span></p>
+  <div class="price">Total: <b id="r-total"></b></div>
+  <button class="btn" onclick="confirmOrder()">Confirm Order</button>
+  <button class="btn l" onclick="hideReview()">Edit</button>
+ </div>
+
+ <div id="confirmed" class="card" style="display:none;margin-top:18px">
+  <h3> Order confirmed</h3>
+  <p>Your tracking number is <b id="new-number"></b>.</p>
+  <a class="btn" href="#track">Track Package</a>
+ </div>
+</div></div>
+
+<div class="view" id="page-track"><div class="wrap pg">
+ <h2>Track Package</h2>
+ <form id="track-form" class="card row" novalidate style="align-items:end">
+  <label>Tracking number<input id="track-input" placeholder="e.g. BEX-1001"><span class="err"></span></label>
+  <button class="btn" type="submit">Track</button>
+ </form>
+
+ <div id="track-result" class="card" style="margin-top:18px;display:none">
+  <h3><span id="t-number"></span> <span class="pill tr" id="t-status"></span></h3>
+  <div class="grid">
+   <p><b>Sender</b><br><span id="t-sender"></span></p>
+   <p><b>Receiver</b><br><span id="t-receiver"></span></p>
+   <p><b>Pickup</b><br><span id="t-from"></span></p>
+   <p><b>Destination</b><br><span id="t-to"></span></p>
+   <p><b>Estimated delivery</b><br><span id="t-eta"></span></p>
+  </div>
+  <ul class="tl" id="timeline">
+   <li>Order received</li>
+   <li>Rider assigned</li>
+   <li>Package picked up</li>
+   <li>In transit</li>
+   <li>Out for delivery</li>
+   <li>Successfully delivered</li>
+  </ul>
+ </div>
+</div></div>
+
+<div class="view" id="page-pricing"><div class="wrap pg">
+ <h2>Transparent Pricing</h2>
+ <div class="grid">
+  <div class="card"><h3>Express</h3><b style="font-size:1.5rem;color:#F58220">₦1,500</b><p>base + ₦250 per km</p><button class="btn sm" onclick="bookType('express')">Book</button></div>
+  <div class="card"><h3>Standard</h3><b style="font-size:1.5rem;color:#F58220">₦700</b><p>base + ₦100 per km</p><button class="btn sm" onclick="bookType('standard')">Book</button></div>
+  <div class="card"><h3>Same-Day</h3><b style="font-size:1.5rem;color:#F58220">₦1,000</b><p>base + ₦150 per km</p><button class="btn sm" onclick="bookType('sameday')">Book</button></div>
+  <div class="card"><h3>Intercity</h3><b style="font-size:1.5rem;color:#F58220">₦5,000</b><p>base + ₦60 per km</p><button class="btn sm" onclick="bookType('intercity')">Book</button></div>
+ </div>
+
+ <h3 style="margin-top:34px">Business plans</h3>
+ <div class="grid">
+  <div class="card"><h3>Starter</h3><b>₦25,000/month</b><p>Up to 30 deliveries, 5% off.</p></div>
+  <div class="card"><h3>Growth</h3><b>₦80,000/month</b><p>Up to 120 deliveries, 12% off.</p></div>
+  <div class="card"><h3>Enterprise</h3><b>Custom</b><p>Dedicated riders and an account manager.</p></div>
+ </div>
+
+ <h3 style="margin-top:34px">Price calculator</h3>
+ <div class="card row">
+  <label>Delivery type
+   <select id="calc-type" onchange="calculate()">
+    <option value="express">Express</option><option value="sameday">Same-Day</option><option value="standard">Standard</option>
+    <option value="business">Business</option><option value="bulk">Bulk</option><option value="scheduled">Scheduled</option><option value="intercity">Intercity</option>
+   </select></label>
+  <label>Distance (km)<input id="calc-km" type="number" min="1" value="10" oninput="calculate()"></label>
+  <label>Weight (kg)<input id="calc-kg" type="number" min="0.1" step="0.1" value="1" oninput="calculate()"></label>
+ </div>
+ <div class="price" id="calc-result"></div>
+ <p class="note">Base price + price per km + ₦100 for every kg above 5kg.</p>
+</div></div>
+
+<div class="view" id="page-account"><div class="wrap pg">
+ <h2>My Account</h2>
+ <div class="card" style="margin-bottom:16px"> <b>Chidi Okafor</b> · chidi@example.com · 0801 000 0000</div>
+ <div class="tabs">
+  <button class="on" onclick="showPanel('acc','active',this)">Active</button>
+  <button onclick="showPanel('acc','history',this)">History</button>
+  <button onclick="showPanel('acc','addresses',this)">Saved Addresses</button>
+  <button onclick="showPanel('acc','payments',this)">Payments</button>
+  <button onclick="showPanel('acc','alerts',this)">Notifications</button>
+ </div>
+ <div class="card tw">
+  <div class="panel on" id="acc-active"><table>
+   <tr><th>ID</th><th>Route</th><th>Status</th></tr>
+   <tr><td>BEX-1001</td><td>Ikeja → Lekki</td><td><span class="pill tr">In transit</span></td></tr>
+   <tr><td>BEX-1003</td><td>GRA → Trans-Amadi</td><td><span class="pill pe">Pending</span></td></tr></table></div>
+  <div class="panel" id="acc-history"><table>
+   <tr><th>ID</th><th>Route</th><th>Date</th><th>Price</th><th>Status</th></tr>
+   <tr><td>BEX-0988</td><td>Yaba → Victoria Island</td><td>02 Nov</td><td>₦4,200</td><td><span class="pill ok">Delivered</span></td></tr>
+   <tr><td>BEX-0950</td><td>Surulere → Ajah</td><td>28 Oct</td><td>₦6,100</td><td><span class="pill ok">Delivered</span></td></tr></table></div>
+  <div class="panel" id="acc-addresses"><table>
+   <tr><th>Label</th><th>Address</th></tr>
+   <tr><td>Home</td><td>12 Allen Avenue, Ikeja</td></tr>
+   <tr><td>Office</td><td>5 Admiralty Way, Lekki</td></tr></table></div>
+  <div class="panel" id="acc-payments"><table>
+   <tr><th>Date</th><th>Reference</th><th>Amount</th><th>Status</th></tr>
+   <tr><td>02 Nov</td><td>PAY-771</td><td>₦4,200</td><td><span class="pill ok">Paid</span></td></tr>
+   <tr><td>28 Oct</td><td>PAY-702</td><td>₦6,100</td><td><span class="pill ok">Paid</span></td></tr></table></div>
+  <div class="panel" id="acc-alerts">
+   <p> A rider has been assigned to BEX-1001.</p>
+   <p> 10% off your next Express delivery.</p></div>
+ </div>
+</div></div>
+
+<div class="view" id="page-rider"><div class="wrap pg">
+ <h2>Become a Rider</h2>
+ <div class="grid">
+  <div class="card"><h3>Benefits</h3><p>Weekly payouts · Flexible hours · Safety gear · Insurance support</p></div>
+  <div class="card"><h3>Requirements</h3><p>Own a motorcycle · Valid ID · Valid driver's licence · Smartphone · Age 21+</p></div>
+ </div>
+
+ <form id="rider-form" class="card" novalidate style="margin-top:18px">
+  <div class="row">
+   <label>Full name<input name="fullName"><span class="err"></span></label>
+   <label>Phone number<input name="phone"><span class="err"></span></label>
+   <label>Email address<input name="email" type="email"><span class="err"></span></label>
+  </div>
+  <div class="row">
+   <label>Residential address<input name="address"><span class="err"></span></label>
+   <label>State
+    <select name="state"><option value="">Select…</option><option>Lagos</option><option>Abuja</option><option>Rivers</option><option>Oyo</option><option>Kano</option></select>
+    <span class="err"></span></label>
+   <label>City<input name="city"><span class="err"></span></label>
+  </div>
+  <div class="row">
+   <label>Do you own a motorcycle?
+    <select name="bike"><option value="">Select…</option><option>Yes</option><option>No, I need one</option></select>
+    <span class="err"></span></label>
+   <label>Valid ID
+    <select name="idType"><option value="">Select…</option><option>NIN</option><option>Voter's card</option><option>International passport</option></select>
+    <span class="err"></span></label>
+   <label>Driver's licence number<input name="licence"><span class="err"></span></label>
+  </div>
+  <label>Upload documents<input type="file" multiple></label>
+  <p><button class="btn" type="submit">Submit Application</button></p>
+ </form>
+
+ <h3 style="margin-top:30px">Rider dashboard</h3>
+ <div class="grid">
+  <div class="card stat"><b>4</b>Assigned deliveries</div>
+  <div class="card stat"><b>312</b>Completed deliveries</div>
+  <div class="card stat"><b>₦48,500</b>Earnings this week</div>
+ </div>
+ <div class="card tw" style="margin-top:16px"><table>
+  <tr><th>ID</th><th>Route</th><th>Earnings</th><th>Status</th></tr>
+  <tr><td>BEX-1001</td><td>Ikeja → Lekki</td><td>₦1,800</td><td><span class="pill tr">In transit</span></td></tr>
+  <tr><td>BEX-0988</td><td>Yaba → Victoria Island</td><td>₦2,100</td><td><span class="pill ok">Delivered</span></td></tr>
+  <tr><td>BEX-0950</td><td>Surulere → Ajah</td><td>₦2,900</td><td><span class="pill ok">Delivered</span></td></tr>
+ </table></div>
+</div></div>
+
+<div class="view" id="page-business"><div class="wrap pg">
+ <h2>Business Solutions</h2>
+ <div class="grid">
+  <div class="card"><h3>E-commerce delivery</h3><p>Connect dispatch to your online store.</p></div>
+  <div class="card"><h3>Vendor partnerships</h3><p>Preferred rates for online vendors.</p></div>
+  <div class="card"><h3>Bulk order handling</h3><p>Hundreds of parcels, one pickup.</p></div>
+  <div class="card"><h3>Corporate delivery</h3><p>Documents and goods between offices.</p></div>
+ </div>
+ <form id="business-form" class="card" novalidate style="margin-top:18px">
+  <h3>Business account and enquiry</h3>
+  <div class="row">
+   <label>Company name<input name="company"><span class="err"></span></label>
+   <label>Contact email<input name="email" type="email"><span class="err"></span></label>
+   <label>Monthly deliveries
+    <select name="volume"><option value="">Select…</option><option>1–30</option><option>31–120</option><option>120+</option></select>
+    <span class="err"></span></label>
+  </div>
+  <label>Message<textarea name="message" rows="3"></textarea><span class="err"></span></label>
+  <p><button class="btn" type="submit">Send Enquiry</button></p>
+ </form>
+</div></div>
+
+<div class="view" id="page-contact"><div class="wrap pg">
+ <h2>Customer Support</h2>
+ <div class="grid">
+  <div class="card">
+   <h3>Contact us</h3>
+   <p> +234 9131788516<br> hello@blackexprexa.com</p>
+   <button class="btn sm" style="background:#25D366" onclick="whatsapp()">WhatsApp</button>
+  </div>
+  <form id="contact-form" class="card" novalidate>
+   <h3>Contact form</h3>
+   <label>Name<input name="name"><span class="err"></span></label>
+   <label>Email<input name="email" type="email"><span class="err"></span></label>
+   <label>Message<textarea name="message" rows="3"></textarea><span class="err"></span></label>
+   <p><button class="btn" type="submit">Send</button></p>
+  </form>
+  <form id="report-form" class="card" novalidate>
+   <h3>Report a delivery problem</h3>
+   <label>Tracking number<input name="tracking"><span class="err"></span></label>
+   <label>Issue
+    <select name="issue"><option value="">Select…</option><option>Late delivery</option><option>Damaged package</option><option>Rider conduct</option><option>Wrong address</option></select>
+    <span class="err"></span></label>
+   <label>Details<textarea name="details" rows="2"></textarea><span class="err"></span></label>
+   <p><button class="btn d" type="submit">Report</button></p>
+  </form>
+ </div>
+ <h3 style="margin-top:28px">Help and FAQ</h3>
+ <details><summary>How fast is Express delivery?</summary><p>Usually within 1–2 hours inside a city.</p></details>
+ <details><summary>How do I pay?</summary><p>You can pay by card or bank transfer.</p></details>
+ <details><summary>How do I track my parcel?</summary><p>Use your tracking number on the Track Package page.</p></details>
+</div></div>
+
+<div class="view" id="page-admin"><div class="wrap pg">
+ <h2>Admin Dashboard</h2>
+ <div class="grid">
+  <div class="card stat"><b>251,204</b>Total deliveries</div>
+  <div class="card stat"><b>38</b>Pending orders</div>
+  <div class="card stat"><b>249,876</b>Completed</div>
+  <div class="card stat"><b>1,812</b>Active riders</div>
+  <div class="card stat"><b>₦18,400,000</b>Revenue this month</div>
+ </div>
+ <div class="tabs" style="margin-top:20px">
+  <button class="on" onclick="showPanel('adm','deliveries',this)">Deliveries</button>
+  <button onclick="showPanel('adm','riders',this)">Riders</button>
+  <button onclick="showPanel('adm','customers',this)">Customers</button>
+  <button onclick="showPanel('adm','revenue',this)">Revenue</button>
+  <button onclick="showPanel('adm','transactions',this)">Transactions</button>
+ </div>
+ <input id="admin-search" placeholder="Search the table…" oninput="filterRows()" style="max-width:300px;margin-bottom:12px">
+ <div class="card tw">
+  <div class="panel on" id="adm-deliveries"><table>
+   <tr><th>ID</th><th>Customer</th><th>Route</th><th>Price</th><th>Status</th></tr>
+   <tr><td>BEX-1001</td><td>Ada Eze</td><td>Ikeja → Lekki</td><td>₦4,500</td><td><span class="pill tr">In transit</span></td></tr>
+   <tr><td>BEX-1002</td><td>Kunle Bello</td><td>Wuse → Garki</td><td>₦2,800</td><td><span class="pill ok">Delivered</span></td></tr>
+   <tr><td>BEX-1003</td><td>Ngozi Obi</td><td>GRA → Trans-Amadi</td><td>₦3,600</td><td><span class="pill pe">Pending</span></td></tr>
+   <tr><td>BEX-1004</td><td>Tola Ige</td><td>Ibadan → Lagos</td><td>₦9,800</td><td><span class="pill ok">Delivered</span></td></tr></table></div>
+  <div class="panel" id="adm-riders"><table>
+   <tr><th>Rider</th><th>City</th><th>Status</th><th>Trips</th></tr>
+   <tr><td>Musa K.</td><td>Lagos</td><td><span class="pill ok">Active</span></td><td>312</td></tr>
+   <tr><td>Ife O.</td><td>Abuja</td><td><span class="pill ok">Active</span></td><td>204</td></tr>
+   <tr><td>Dayo A.</td><td>Ibadan</td><td><span class="pill pe">Pending</span></td><td>0</td></tr></table></div>
+  <div class="panel" id="adm-customers"><table>
+   <tr><th>Name</th><th>Email</th><th>Orders</th></tr>
+   <tr><td>Chidi Okafor</td><td>chidi@example.com</td><td>24</td></tr>
+   <tr><td>Ada Eze</td><td>ada@example.com</td><td>9</td></tr>
+   <tr><td>Tola Ige</td><td>tola@example.com</td><td>15</td></tr></table></div>
+  <div class="panel" id="adm-revenue"><table>
+   <tr><th>Month</th><th>Revenue</th></tr>
+   <tr><td>September</td><td>₦15,200,000</td></tr>
+   <tr><td>October</td><td>₦17,100,000</td></tr>
+   <tr><td>November</td><td>₦18,400,000</td></tr></table></div>
+  <div class="panel" id="adm-transactions"><table>
+   <tr><th>Reference</th><th>Customer</th><th>Amount</th><th>Status</th></tr>
+   <tr><td>TX-501</td><td>Ada Eze</td><td>₦4,500</td><td><span class="pill ok">Paid</span></td></tr>
+   <tr><td>TX-502</td><td>Kunle Bello</td><td>₦2,800</td><td><span class="pill ok">Paid</span></td></tr>
+   <tr><td>TX-503</td><td>Ngozi Obi</td><td>₦3,600</td><td><span class="pill pe">Pending</span></td></tr></table></div>
+ </div>
+</div></div>
+
+</main>
+
+<footer>
+ <div class="wrap grid">
+  <div><h4>Black Exprexa</h4><p>Fast, reliable delivery across Nigeria.</p></div>
+  <div><h4>Company</h4><a href="#about">About</a><a href="#rider">Riders</a><a href="#business">Business</a><a href="#admin">Admin</a></div>
+  <div><h4>Contact</h4>+234 9131788516<br>hello@blackexprexa.com</div>
+  <div><h4>Get the app</h4><a class="store" href="#home" onclick="getApp('App Store')"><small>Download on the</small>App Store</a><a class="store" href="#home" onclick="getApp('Google Play')"><small>Get it on</small>Google Play</a></div>
+  <div><h4>Social</h4><a href="#contact">Instagram</a><a href="#contact">X / Twitter</a><a href="#contact">Facebook</a></div>
+ </div>
+ <div class="wrap note" style="margin-top:20px">© 2026 Black Exprexa</div>
+</footer>
+
+<a class="wa" href="https://wa.me/2349131788516" target="_blank" title="Chat on WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><g transform="translate(6.6 6.6) scale(0.45)"><path fill="#fff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></g></svg></a>
+
+<div class="modal" id="auth-modal"><div class="box">
+ <h3 id="auth-title">Login</h3>
+ <form id="auth-form" novalidate>
+  <label>Email<input name="email" type="email"><span class="err"></span></label>
+  <div id="name-field"><label>Full name<input name="fullName"><span class="err"></span></label></div>
+  <label>Password<input name="password" type="password"><span class="err"></span></label>
+  <p><button class="btn" type="submit">Continue</button> <button type="button" class="btn l" onclick="closeAuth()">Cancel</button></p>
+ </form>
+</div></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
